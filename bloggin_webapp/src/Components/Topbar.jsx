@@ -1,6 +1,7 @@
 import React from 'react'
 import "./topbar.css"
-import { AppBar, Toolbar} from '@material-ui/core';
+import { AppBar, Toolbar } from '@material-ui/core';
+import { AccountCircleRounded , HomeRounded,InputRounded,PostAddRounded } from '@material-ui/icons';
 
 export default function topbar() {
   return (
@@ -23,11 +24,15 @@ export default function topbar() {
           <Toolbar>
             <div className="topright">
               <ul>
-                home 
+                <HomeRounded />
               </ul>
-              <ul>Login</ul>
-              <ul>Post</ul>
-              <ul>user</ul>
+              <ul>
+                <InputRounded /></ul>
+              <ul><PostAddRounded /></ul>
+              
+              <ul>
+                <AccountCircleRounded />
+                </ul>
             </div>
           </Toolbar>
           
