@@ -15,3 +15,7 @@
     width: 40px;
     cursor: pointer;
 }
+.topright{
+    align-items: center;
+    display: flex;
+}

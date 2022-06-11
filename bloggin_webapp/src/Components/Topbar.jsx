@@ -1,6 +1,6 @@
 import React from 'react'
 import "./topbar.css"
-import { AppBar, Toolbar } from '@material-ui/core';
+import { AppBar, Toolbar} from '@material-ui/core';
 
 export default function topbar() {
   return (
@@ -22,7 +22,12 @@ export default function topbar() {
           </Toolbar>
           <Toolbar>
             <div className="topright">
-              top right
+              <ul>
+                home 
+              </ul>
+              <ul>Login</ul>
+              <ul>Post</ul>
+              <ul>user</ul>
             </div>
           </Toolbar>
           
