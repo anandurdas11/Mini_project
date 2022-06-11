@@ -13,7 +13,7 @@ export default function topbar() {
               <header>
                 <img
                   src="https://cdn0.iconfinder.com/data/icons/font-awesome-solid-vol-1/512/blog-128.png"
-                  className="topAvatar"
+                  className="topavatar"
                   alt="icon"
                 />
               </header>
