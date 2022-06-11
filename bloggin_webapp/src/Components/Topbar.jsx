@@ -26,22 +26,22 @@ export default function topbar() {
               <ul className='iconbadge'>
                 <div>
               
-                    <HomeRounded></HomeRounded>
+                    <HomeRounded style={{color:"black"}}></HomeRounded>
                  
                 </div>
               </ul>
               <ul className='iconbadge'>
-                 <InputRounded></InputRounded>
+                <InputRounded style={{ color: "black" }}></InputRounded>
                 </ul>
               <ul className='iconbadge'>
                 
-                <PostAddRounded></PostAddRounded>
+                <PostAddRounded style={{ color: "black" }}></PostAddRounded>
                 
               </ul>
               
               <ul className='iconbadge'>
                
-                <AccountCircleRounded/>
+                <AccountCircleRounded style={{ color: "black" }} />
                 </ul>
             </div>
           </Toolbar>
