@@ -10,7 +10,13 @@ export default function topbar() {
         <div className="topbarwrapper">
           <Toolbar>
             <div className="topleft">
-              top left
+              <header>
+                <img
+                  src="https://cdn0.iconfinder.com/data/icons/font-awesome-solid-vol-1/512/blog-128.png"
+                  className="topAvatar"
+                  alt="icon"
+                />
+              </header>
             </div>
             
           </Toolbar>
