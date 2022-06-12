@@ -9,11 +9,12 @@ function App() {
   return (
     <div className="container">
       <Router>
-        <Topbar />
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+        <div className="Topbar">
+          <Topbar />
+        </div>
+
+        
+
         <div className="container">
           <div className="others">
             <Switch>

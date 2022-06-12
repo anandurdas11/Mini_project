@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function topbar() {
   return (
-    <div className="topbar">
+    <div className="topbar" position="static">
       <AppBar>
        
         <div className="topbarwrapper">

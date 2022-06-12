@@ -1,25 +1,30 @@
 import React from 'react'
-import { TextField ,Select ,InputLabel,FormControl,MenuItem } from "@material-ui/core";
+import "./Addpost.css"
+import { TextField,Button } from "@material-ui/core";
 function Addpost() {
   return (
-    <div>
-      <form>
-        <TextField fullwidth variant="outlined" label="title"></TextField>
+    <div className="createpost">
+      
+        <h1>Create Post here </h1>
+        <form>
+          <TextField fullwidth variant="outlined" label="title"></TextField>
+          <br></br>
+          <br></br>
+          <TextField
+            variant="outlined"
+            label="articlebody"
+            multiline
+            rows={30}
+            rowsMax={100}
+            style={{ width: "50%", height: "100%" }}
+          ></TextField>
+          <br></br>
+          <br></br>
+          <Button color="primary" variant="contained">Submit</Button>
+          <br></br>
+        </form>
         <br></br>
-        <br></br>
-        <TextField variant="outlined" label="articlebody"></TextField>
-        <br></br>
-        <br></br>
-        <FormControl fullWidth>
-          {/*<InputLabel id="simple">Catgoery</InputLabel>*/}
-        </FormControl>
-        <Select labelId="simple" id="simple">
-          
-          <MenuItem value={"TECH"}>Technology</MenuItem>
-          <MenuItem value={"TECH"}>Art</MenuItem>
-         
-        </Select>
-      </form>
+      
     </div>
   );
 }
