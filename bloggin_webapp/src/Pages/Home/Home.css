@@ -1,3 +1,4 @@
 body{
-    background-color: aliceblue;
+   background-image: radial-gradient(circle, #ffffff, #fbfdff, #f5fbff, #edfaff, #e4faff, #e1faff, #ddfbff, #dafbfe, #ddfcfe, #dffdfd, #e2fefd, #e5fffd);
+
 }
