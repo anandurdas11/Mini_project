@@ -1,0 +1,12 @@
+.others {
+  flex: 4;
+  margin-top: auto;
+  background-color: aqua;
+  padding-left: 20px;
+}
+
+.container {
+  display: flex;
+  margin-top: 100%;
+  align-items: center;
+}

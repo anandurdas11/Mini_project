@@ -2,6 +2,7 @@ import React from 'react'
 import "./topbar.css"
 import { AppBar, Toolbar } from '@material-ui/core';
 import { AccountCircleRounded, HomeRounded, InputRounded, PostAddRounded } from '@material-ui/icons';
+import { Link } from "react-router-dom";
 
 export default function topbar() {
   return (
@@ -24,24 +25,29 @@ export default function topbar() {
           <Toolbar>
             <div className="topright">
               <ul className='iconbadge'>
-                <div>
-              
-                    <HomeRounded style={{color:"black"}}></HomeRounded>
-                 
-                </div>
+                <Link to="/">
+                  <HomeRounded style={{ color: "black" }}></HomeRounded>
+                </Link>
               </ul>
               <ul className='iconbadge'>
-                <InputRounded style={{ color: "black" }}></InputRounded>
+                <Link to="/Login">
+                  <InputRounded style={{ color: "black" }}></InputRounded>
+                </Link>
+                
                 </ul>
               <ul className='iconbadge'>
+                <Link to="/Addpost">
+                  <PostAddRounded style={{ color: "black" }}></PostAddRounded>
+                </Link>
                 
-                <PostAddRounded style={{ color: "black" }}></PostAddRounded>
                 
               </ul>
               
               <ul className='iconbadge'>
-               
-                <AccountCircleRounded style={{ color: "black" }} />
+                <Link to="/Addaccount">
+                  <AccountCircleRounded style={{ color: "black" }} />
+                </Link>
+                
                 </ul>
             </div>
           </Toolbar>
