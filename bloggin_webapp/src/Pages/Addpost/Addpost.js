@@ -10,7 +10,7 @@ function Addpost() {
           fullwidth
           variant="outlined"
           label="title"
-          style={{ width: "40%" }}
+          style={{ width: "40%" , color:"black",backgroundColor:"white"}}
         ></TextField>
         <br></br>
         <br></br>
@@ -20,7 +20,7 @@ function Addpost() {
           multiline
           rows={20}
           rowsMax={100}
-          style={{ width: "40%" }}
+          style={{ width: "40%", color:"black",backgroundColor:"white"}}
         ></TextField>
         <br></br>
         <br></br>
