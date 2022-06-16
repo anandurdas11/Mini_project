@@ -1,7 +1,13 @@
 import React from 'react'
-
+import { Card } from "@material-ui/core"
 export default function Addaccount() {
   return (
-    <div><h1>ADD account</h1></div>
+    <div>
+      <br></br>
+      <Card>
+       
+
+      </Card>
+    </div>
   )
 }

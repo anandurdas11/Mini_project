@@ -1,10 +1,24 @@
 import React from 'react'
 import "./topbar.css"
-import { AppBar, Toolbar } from '@material-ui/core';
-import { AccountCircleRounded, HomeRounded, InputRounded, PostAddRounded } from '@material-ui/icons';
+import { AppBar, Toolbar,Button } from '@material-ui/core';
+import { AccountCircleRounded, HomeRounded, PostAddRounded,InputRounded, Refresh } from '@material-ui/icons';
+import { auth } from '../firebase';
+import { signOut } from 'firebase/auth';
+import { useState } from 'react';
 import { Link } from "react-router-dom";
 
-export default function topbar() {
+export default function Topbar() {
+  const [isAuth, setisAuth] = useState(localStorage.getItem("isAuth"));
+  const signUserout = () => {
+    signOut(auth).then(() => {
+      localStorage.clear();
+      setisAuth(false);
+      window.location.pathname = "/Login"
+    });
+  };
+  const refreshpage = () => {
+    window.location.reload(false);
+  }
   return (
     <div className="topbar" position="static">
       <AppBar>
@@ -29,26 +43,41 @@ export default function topbar() {
                   <HomeRounded style={{ color: "black" }}></HomeRounded>
                 </Link>
               </ul>
-              <ul className='iconbadge'>
+              {!isAuth ? (<ul className='iconbadge'>
                 <Link to="/Login">
-                  <InputRounded style={{ color: "black" }}></InputRounded>
+                <InputRounded />
                 </Link>
-                
-                </ul>
-              <ul className='iconbadge'>
-                <Link to="/Addpost">
-                  <PostAddRounded style={{ color: "black" }}></PostAddRounded>
-                </Link>
-                
-                
-              </ul>
+
+              </ul>) : (
+                  <><ul className='iconbadge'>
+                    <Link to="/Login">
+                      <InputRounded />
+                    </Link>
+                    
+                    
+
+                  </ul><ul className='iconbadge'>
+                      <Link to="/Addpost">
+                        <PostAddRounded style={{ color: "black" }}></PostAddRounded>
+                      </Link>
+
+
+                    </ul></>
+              )}
+            
+            
               
               <ul className='iconbadge'>
                 <Link to="/Addaccount">
                   <AccountCircleRounded style={{ color: "black" }} />
                 </Link>
                 
-                </ul>
+              </ul>
+              <ul className='iconbadge'>
+               
+                <Button onClick={refreshpage}><Refresh></Refresh></Button>
+
+              </ul>
             </div>
           </Toolbar>
           
