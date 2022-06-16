@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card } from "@material-ui/core"
-import './Home.css'
+import './Postlist.css'
 function Home() {
   return (
     <div className>
