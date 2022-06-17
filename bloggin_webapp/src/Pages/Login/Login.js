@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from "@material-ui/core"
+import { Button ,Card } from "@material-ui/core"
 import './Login.css'
 import { auth, provider } from '../../firebase';
 import { signInWithPopup } from "firebase/auth";
@@ -26,17 +26,21 @@ function Login({ setIsAuth }) {
 
   }
   return !isAuth ? (
-    <div className="login">
-      <Button color="primary" variant="contained" onClick={signwithgoogle}>
-        Sign in with Google
-      </Button>
-    </div>
+    <Card className="Logbox">
+      <div className="login">
+        <Button color="primary" variant="contained" onClick={signwithgoogle}>
+          Sign in with Google
+        </Button>
+      </div>
+    </Card>
   ) : (
-    <div className="login">
-      <Button color="primary" variant="contained" onClick={signUserout}>
-        Sign out
-      </Button>
-    </div>
+    <Card className="Logbox">
+      <div className="login">
+        <Button color="primary" variant="contained" onClick={signUserout}>
+          Sign out
+        </Button>
+      </div>
+    </Card>
   );
   
 }

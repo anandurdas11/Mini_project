@@ -2,20 +2,15 @@ import React from 'react'
 import "./topbar.css"
 import { AppBar, Toolbar,Button } from '@material-ui/core';
 import { AccountCircleRounded, HomeRounded, PostAddRounded,InputRounded, Refresh } from '@material-ui/icons';
-import { auth } from '../firebase';
-import { signOut } from 'firebase/auth';
-import { useState } from 'react';
+//import { auth } from '../firebase';
+//import { signOut } from 'firebase/auth';
+//import { useState } from 'react';
 import { Link } from "react-router-dom";
 
 export default function Topbar() {
-  const [isAuth, setisAuth] = useState(localStorage.getItem("isAuth"));
-  const signUserout = () => {
-    signOut(auth).then(() => {
-      localStorage.clear();
-      setisAuth(false);
-      window.location.pathname = "/Login"
-    });
-  };
+  
+  const isAuth = localStorage.getItem("isAuth");
+ 
   const refreshpage = () => {
     window.location.reload(false);
   }
