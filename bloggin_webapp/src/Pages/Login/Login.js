@@ -27,6 +27,7 @@ function Login({ setIsAuth }) {
   }
   return !isAuth ? (
     <Card className="Logbox">
+     
       <div className="login">
         <Button color="primary" variant="contained" onClick={signwithgoogle}>
           Sign in with Google
