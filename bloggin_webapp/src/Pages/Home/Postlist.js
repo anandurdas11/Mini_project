@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card } from "@material-ui/core"
+import { Button, Card ,TextField } from "@material-ui/core"
 import { AddComment } from '@material-ui/icons';
 import './Postlist.css'
 function Home() {
@@ -15,9 +15,9 @@ function Home() {
           </div>
           <div className="comment">
             <div className="addcomment">
-              <Button>
-                <AddComment />
-              </Button>
+              <TextField label="Add comment" variant='standard' size='small' fullWidth>
+                
+              </TextField>
             </div>
           </div>
         </div>
