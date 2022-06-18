@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Card ,TextField } from "@material-ui/core"
-import { AddComment } from '@material-ui/icons';
+import { SendRounded } from '@material-ui/icons';
 import './Postlist.css'
 function Home() {
   return (
@@ -15,13 +15,19 @@ function Home() {
           </div>
           <div className="comment">
             <div className="addcomment">
-              <TextField label="Add comment" variant='standard' size='small' fullWidth>
-                
-              </TextField>
+              <TextField
+                label="Add comment"
+                variant="standard"
+                size="small"
+                fullWidth
+              ></TextField>
+              <br></br>
+              <div className="send">
+                <SendRounded></SendRounded>
+              </div>
             </div>
           </div>
         </div>
-
         <br></br>
         <Card className="Postcard">
           <h3>Title:HELLO WORLD</h3>
