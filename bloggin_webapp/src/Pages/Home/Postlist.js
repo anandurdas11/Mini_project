@@ -18,10 +18,15 @@ function Home() {
                   className="topavatar"
                   alt="icon"
                 />
-                name
+                <br></br>
+                <div className='username'>
+                  Anandu R das
+                </div>
               </Toolbar>
-              <h3>Title:HELLO WORLD</h3>
-              <p>flgfhjshfoihsdjkfhkldlkflsjdfjslkfjlk</p>
+              <div className='content'>
+                <h3>Title:HELLO WORLD</h3>
+                <p>flgfhjshfoihsdjkfhkldlkflsjdfjslkfjlk</p>
+              </div>
             </Card>
           </div>
           <div className="comment">

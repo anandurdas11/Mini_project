@@ -70,3 +70,11 @@ body{
    padding-top: 30px;
     
  }
+ .username{
+   margin-left: 2%;
+   margin-top: 0.5%;
+ }
+ .content{
+   text-align: left;
+   margin-left: 2%;
+ }
