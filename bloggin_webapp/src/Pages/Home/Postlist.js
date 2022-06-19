@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card ,TextField } from "@material-ui/core"
+import {  Avatar, Card ,TextField, Toolbar } from "@material-ui/core"
 import { SendRounded } from '@material-ui/icons';
 import './Postlist.css'
 function Home() {
@@ -8,7 +8,18 @@ function Home() {
       <body>
         <div className="Post">
           <div className="Postemplate">
-            <Card className="Postcard">
+            <Card
+              className="Postcard"
+              style={{ borderRadius: "20px 20px 0px 0px " }}
+            >
+              <Toolbar className="toppostbar">
+                <Avatar
+                  src="https://lh3.googleusercontent.com/a-/AOh14GjIq7jWeduBBxCLuIj3uG_ct5fx_F7S0ZKb4CdT=s96-c-rg-br100"
+                  className="topavatar"
+                  alt="icon"
+                />
+                name
+              </Toolbar>
               <h3>Title:HELLO WORLD</h3>
               <p>flgfhjshfoihsdjkfhkldlkflsjdfjslkfjlk</p>
             </Card>
