@@ -1,20 +1,63 @@
 .login{
     text-align: center;
-    margin-top: 30%;
-    display: flex;
+    display: block;
     align-items: center;
-    margin-left: 40%;
-    margin-right: 42%;
+    max-width: fit-content;
+    margin-left: 20%;
+    margin-right:20%;
+    border-left: 1px solid black ;
+    height: 500px;
+   
+  
+
     
 }
 .Logbox{
     margin-top: 5%;
     height: 500px;
+    width: 600px;
     margin-left: 25%;
-    margin-right: 25%;
+    margin-right: 20%;
     margin-bottom: 20%;
     width: auto;
     display: flex;
     align-items: center;
+   
+    
+}
+.Loginbutton{
+    margin-top: 110%;
+    margin-left: 40%;
+    margin-right: 50%;
+    display: flex;
+    width: 190px;
+    text-align: center;
+    margin-bottom: 80%;
+    color: #000;
+    padding-top: 10px;
+    
+    
+}
+.Logo{
+    display: flex;
+    margin-top: 0%;
+    margin-left: 5%;
+    text-align: center;
+    color: ;
+    
+    
+    
+}
+.Loginoutbutton{
+    margin-top: 110%;
+    margin-left: 40%;
+    margin-right: 50%;
+    display: flex;
+    width: 190px;
+    text-align: center;
+    margin-bottom: 80%;
+    color: #000;
+    padding-top: 10px;
+    
     
 }

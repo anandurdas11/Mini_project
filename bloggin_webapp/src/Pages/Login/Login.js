@@ -27,19 +27,36 @@ function Login({ setIsAuth }) {
   }
   return !isAuth ? (
     <Card className="Logbox">
-     
+      <div className="Logo">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+          height={"90px"}
+          alt="logo"
+        />
+      </div>
       <div className="login">
-        <Button color="primary" variant="contained" onClick={signwithgoogle}>
-          Sign in with Google
-        </Button>
+        <div className="Loginbutton">
+          <Button color="primary" variant="contained" onClick={signwithgoogle}>
+            Sign in with Google
+          </Button>
+        </div>
       </div>
     </Card>
   ) : (
     <Card className="Logbox">
+      <div className="Logo">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+          height={"90px"}
+          alt="logo"
+        />
+      </div>
       <div className="login">
-        <Button color="primary" variant="contained" onClick={signUserout}>
-          Sign out
-        </Button>
+        <div className="Loginoutbutton">
+          <Button color="primary" variant="contained" onClick={signUserout}>
+            Sign out
+          </Button>
+        </div>
       </div>
     </Card>
   );
