@@ -1,11 +1,11 @@
 import React from 'react'
-import {  Avatar, Card ,TextField, Toolbar,Button } from "@material-ui/core"
-import { SendRounded ,MoreVert } from '@material-ui/icons';
+import {  Avatar, Card ,TextField, Toolbar } from "@material-ui/core"
+import { SendRounded } from '@material-ui/icons';
 import './Postlist.css'
 import Moreoptions from './Moreoptions';
 function Home() {
   return (
-    <div className>
+    <div>
       <body>
         <div className="Post">
           <div className="Postemplate">
@@ -21,9 +21,7 @@ function Home() {
                 />
                 <div className='Name'>jdslkjflk</div>
                 <div className="More">
-                  <Button>
-                    <Moreoptions />
-                  </Button>
+                  <Moreoptions />
                 </div>
               </Toolbar>
               <div className="content">
@@ -48,15 +46,7 @@ function Home() {
           </div>
         </div>
         <br></br>
-        <Card className="Postcard">
-          <h3>Title:HELLO WORLD</h3>
-          <p>flgfhjshfoihsdjkfhkldlkflsjdfjslkfjlk</p>
-        </Card>
-        <br></br>
-        <Card className="Postcard">
-          <h3>Title:HELLO WORLD</h3>
-          <p>flgfhjshfoihsdjkfhkldlkflsjdfjslkfjlk</p>
-        </Card>
+       
       </body>
     </div>
   );
