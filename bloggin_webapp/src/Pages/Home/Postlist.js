@@ -1,7 +1,8 @@
 import React from 'react'
-import {  Avatar, Card ,TextField, Toolbar } from "@material-ui/core"
-import { SendRounded } from '@material-ui/icons';
+import {  Avatar, Card ,TextField, Toolbar,Button } from "@material-ui/core"
+import { SendRounded ,MoreVert } from '@material-ui/icons';
 import './Postlist.css'
+import Moreoptions from './Moreoptions';
 function Home() {
   return (
     <div className>
@@ -18,12 +19,14 @@ function Home() {
                   className="topavatar"
                   alt="icon"
                 />
-                <br></br>
-                <div className='username'>
-                  Anandu R das
+                <div className='Name'>jdslkjflk</div>
+                <div className="More">
+                  <Button>
+                    <Moreoptions />
+                  </Button>
                 </div>
               </Toolbar>
-              <div className='content'>
+              <div className="content">
                 <h3>Title:HELLO WORLD</h3>
                 <p>flgfhjshfoihsdjkfhkldlkflsjdfjslkfjlk</p>
               </div>

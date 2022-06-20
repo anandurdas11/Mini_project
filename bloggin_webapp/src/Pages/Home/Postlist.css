@@ -53,12 +53,12 @@ body{
 }
  .toppostbar{
    width: 100%;
-   text-align: left;
-   
+   text-align: left; 
    border-bottom : 1px solid grey;
    border-radius: 20px 20px 0px 0px  ;
    display: flex;
-  
+   align-items: initial;
+   justify-content: space-between;
  }
 
  .toppostavatar {
@@ -68,13 +68,21 @@ body{
    background-color: #ddfbff;
    margin-bottom: 60%;
    padding-top: 30px;
-    
+   margin-top: 0.5%;
+   margin-top: auto;
+   
  }
- .username{
-   margin-left: 2%;
+ .Name{
+   margin-right: auto;
+   padding-left: 20px;
    margin-top: 0.5%;
  }
  .content{
    text-align: left;
    margin-left: 2%;
+ }
+ .More{
+   margin-right: 2%;
+   margin-top: 0.5%;
+   
  }
