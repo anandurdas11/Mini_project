@@ -1,7 +1,7 @@
 import React from 'react'
 import "./topbar.css"
-import { AppBar, Toolbar,Button } from '@material-ui/core';
-import { AccountCircleRounded, HomeRounded, PostAddRounded,InputRounded, Refresh } from '@material-ui/icons';
+import { AppBar, Toolbar, Tooltip, IconButton } from '@material-ui/core';
+import { AccountCircleRounded, HomeRounded, PostAddRounded, InputRounded, Refresh } from '@material-ui/icons';
 //import { auth } from '../firebase';
 //import { signOut } from 'firebase/auth';
 //import { useState } from 'react';
@@ -33,28 +33,51 @@ export default function Topbar() {
           </Toolbar>
           <Toolbar>
             <div className="topright">
-              <ul className='iconbadge'>
-                <Link to="/">
-                  <HomeRounded style={{ color: "black" }}></HomeRounded>
-                </Link>
+              <ul>
+                <Tooltip title="Home">
+                  <Link to="/">
+                    <IconButton>
+                      <HomeRounded style={{ color: "black" }}></HomeRounded>
+                    </IconButton>
+                    
+                  </Link>
+                </Tooltip>
+               
               </ul>
-              {!isAuth ? (<ul className='iconbadge'>
-                <Link to="/Login">
-                <InputRounded />
-                </Link>
+              {!isAuth ? (<ul>
+                <Tooltip title="Login">
+                  <Link to="/Login">
+                    <IconButton>
+                      <InputRounded style={{ color: "black" }} />
+                    </IconButton>
+                   
+                  </Link>
+                </Tooltip>
+               
 
               </ul>) : (
-                  <><ul className='iconbadge'>
-                    <Link to="/Login">
-                      <InputRounded />
-                    </Link>
+                  <><ul >
+                    <Tooltip title="Login">
+                      <Link to="/Login">
+                        <IconButton>
+                          <InputRounded style={{ color: "black" }} />
+                        </IconButton>
+
+                      </Link>
+                    </Tooltip>
                     
                     
 
                   </ul><ul className='iconbadge'>
-                      <Link to="/Addpost">
-                        <PostAddRounded style={{ color: "black" }}></PostAddRounded>
-                      </Link>
+                      <Tooltip title="Add article">
+                        <Link to="/Addpost">
+                          <IconButton>
+                            <PostAddRounded style={{ color: "black" }}></PostAddRounded>
+                          </IconButton>
+                        
+                        </Link>
+                      </Tooltip>
+                      
 
 
                     </ul></>
@@ -62,15 +85,24 @@ export default function Topbar() {
             
             
               
-              <ul className='iconbadge'>
-                <Link to="/Addaccount">
-                  <AccountCircleRounded style={{ color: "black" }} />
-                </Link>
+              <ul >
+                <Tooltip title="Account">
+                  <Link to="/Addaccount">
+                    <IconButton>
+                        <AccountCircleRounded style={{ color: "black" }} />
+                    </IconButton>
+                  
+                  </Link>
+                </Tooltip>
+               
                 
               </ul>
-              <ul className='iconbadge'>
+              <ul >
+                <Tooltip title="refresh" >
+                  <IconButton onClick={refreshpage}><Refresh style={{ color: "black" }}></Refresh></IconButton>
+                  
+                </Tooltip>
                
-                <Button onClick={refreshpage}><Refresh></Refresh></Button>
 
               </ul>
             </div>
