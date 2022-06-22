@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Addpost.css"
-import { TextField,Button } from "@material-ui/core";
+import { TextField, Button } from "@material-ui/core";
+import { postrefernce } from '../../firebasecollection';
 function Addpost() {
   return (
     <div className="createpost">
@@ -9,8 +10,16 @@ function Addpost() {
         <TextField
           fullwidth
           variant="outlined"
+          label="Username"
+          style={{ width: "40%", color: "black", backgroundColor: "white" }}
+        ></TextField>
+        <br></br>
+        <br></br>
+        <TextField
+          fullwidth
+          variant="outlined"
           label="title"
-          style={{ width: "40%" , color:"black",backgroundColor:"white"}}
+          style={{ width: "40%", color: "black", backgroundColor: "white" }}
         ></TextField>
         <br></br>
         <br></br>
@@ -20,7 +29,7 @@ function Addpost() {
           multiline
           rows={20}
           rowsMax={100}
-          style={{ width: "40%", color:"black",backgroundColor:"white"}}
+          style={{ width: "40%", color: "black", backgroundColor: "white" }}
         ></TextField>
         <br></br>
         <br></br>

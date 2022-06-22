@@ -6,55 +6,68 @@ import Moreoptions from './Moreoptions';
 import { useState } from 'react';
 import { postrefernce } from '../../firebasecollection';
 
-import { doc, onSnapshot } from 'firebase/firestore';
+import {  onSnapshot } from 'firebase/firestore';
 import { useEffect } from 'react';
 function Home() {
+   const [posts, setposts] = useState([]);
+   useEffect(() => {
+     const unsubcribe = onSnapshot(postrefernce, (snapshot) => {
+       setposts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })));
+     });
+     return () => {
+       unsubcribe();
+     };
+   }, []);
   
  
   return (
     <div>
-    
       <body>
         <div className="Post">
           <div className="Postemplate">
-            <Card
-              className="Postcard"
-              style={{ borderRadius: "20px 20px 0px 0px " }}
-            >
-              <Toolbar className="toppostbar">
-                <Avatar
-                  src="https://lh3.googleusercontent.com/a-/AOh14GjIq7jWeduBBxCLuIj3uG_ct5fx_F7S0ZKb4CdT=s96-c-rg-br100"
-                  className="topavatar"
-                  alt="icon"
-                />
-                <div className="Name">jdslkjflk</div>
-                <div className="More">
-                  <Moreoptions />
+            {posts.map((post) => (
+              <ul key={post.id}>
+                <Card
+                  className="Postcard"
+                  style={{ borderRadius: "20px 20px 0px 0px ", }}
+                >
+                  <Toolbar className="toppostbar">
+                    <Avatar
+                      src="https://lh3.googleusercontent.com/a-/AOh14GjIq7jWeduBBxCLuIj3uG_ct5fx_F7S0ZKb4CdT=s96-c-rg-br100"
+                      className="topavatar"
+                      alt="icon"
+                    />
+                    <div className="Name">{post.data.username}</div>
+                    <div className="More">
+                      <Moreoptions />
+                    </div>
+                  </Toolbar>
+                  <Card className="content" style={{overflow:'auto'}}>
+                    <h3 style={{ marginLeft:'2%'}}>{post.data.Title}</h3>
+                    <p style={{marginLeft:'2%'}}>{post.data.Content}</p>
+                  </Card>
+                </Card>
+                <div className="comment">
+                  <div className="addcomment">
+                    <TextField
+                      label="Add comment"
+                      variant="standard"
+                      size="small"
+                      fullWidth
+                    ></TextField>
+                    <br></br>
+                    <div className="send">
+                      <SendRounded></SendRounded>
+                    </div>
+                    <br></br>
+                  </div>
                 </div>
-              </Toolbar>
-              <div className="content">
-                <h3></h3>
-                <p></p>
-              </div>
-            </Card>
-          </div>
-          <div className="comment">
-            <div className="addcomment">
-              <TextField
-                label="Add comment"
-                variant="standard"
-                size="small"
-                fullWidth
-              ></TextField>
-              <br></br>
-              <div className="send">
-                <SendRounded></SendRounded>
-              </div>
-              <br></br>
-            </div>
+              </ul>
+            ))}
           </div>
         </div>
         <br></br>
+        
       </body>
     </div>
   );
