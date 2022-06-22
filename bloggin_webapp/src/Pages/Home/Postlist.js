@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Avatar, Card ,TextField, Toolbar } from "@material-ui/core"
+import {  Avatar, Card ,IconButton,TextField, Toolbar } from "@material-ui/core"
 import { SendRounded } from '@material-ui/icons';
 import './Postlist.css'
 import Moreoptions from './Moreoptions';
@@ -29,7 +29,7 @@ function Home() {
               <ul key={post.id}>
                 <Card
                   className="Postcard"
-                  style={{ borderRadius: "20px 20px 0px 0px ", }}
+                  style={{ borderRadius: "20px 20px 0px 0px " }}
                 >
                   <Toolbar className="toppostbar">
                     <Avatar
@@ -42,9 +42,9 @@ function Home() {
                       <Moreoptions />
                     </div>
                   </Toolbar>
-                  <Card className="content" style={{overflow:'auto'}}>
-                    <h3 style={{ marginLeft:'2%'}}>{post.data.Title}</h3>
-                    <p style={{marginLeft:'2%'}}>{post.data.Content}</p>
+                  <Card className="content" style={{ overflow: "auto" }}>
+                    <h3 style={{ marginLeft: "2%" }}>{post.data.Title}</h3>
+                    <p style={{ marginLeft: "2%" }}>{post.data.Content}</p>
                   </Card>
                 </Card>
                 <div className="comment">
@@ -57,7 +57,9 @@ function Home() {
                     ></TextField>
                     <br></br>
                     <div className="send">
-                      <SendRounded></SendRounded>
+                      <IconButton>
+                        <SendRounded style={{ color: "black" }}></SendRounded>
+                      </IconButton>
                     </div>
                     <br></br>
                   </div>
@@ -67,7 +69,6 @@ function Home() {
           </div>
         </div>
         <br></br>
-        
       </body>
     </div>
   );

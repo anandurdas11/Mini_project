@@ -36,8 +36,8 @@ export default function Topbar() {
               <ul>
                 <Tooltip title="Home">
                   <Link to="/">
-                    <IconButton>
-                      <HomeRounded style={{ color: "black" }}></HomeRounded>
+                    <IconButton fontSize="large">
+                      <HomeRounded style={{ color: "black" }} fontSize="large"></HomeRounded>
                     </IconButton>
                     
                   </Link>
@@ -45,10 +45,10 @@ export default function Topbar() {
                
               </ul>
               {!isAuth ? (<ul>
-                <Tooltip title="Login">
+                <Tooltip  title="Login">
                   <Link to="/Login">
                     <IconButton>
-                      <InputRounded style={{ color: "black" }} />
+                      <InputRounded style={{ color: "black" }} fontSize="large" />
                     </IconButton>
                    
                   </Link>
@@ -60,7 +60,7 @@ export default function Topbar() {
                     <Tooltip title="Login">
                       <Link to="/Login">
                         <IconButton>
-                          <InputRounded style={{ color: "black" }} />
+                          <InputRounded style={{ color: "black" }} fontSize="large" />
                         </IconButton>
 
                       </Link>
@@ -68,11 +68,11 @@ export default function Topbar() {
                     
                     
 
-                  </ul><ul className='iconbadge'>
+                  </ul><ul>
                       <Tooltip title="Add article">
                         <Link to="/Addpost">
                           <IconButton>
-                            <PostAddRounded style={{ color: "black" }}></PostAddRounded>
+                            <PostAddRounded style={{ color: "black" }} fontSize="large" ></PostAddRounded>
                           </IconButton>
                         
                         </Link>
@@ -89,7 +89,7 @@ export default function Topbar() {
                 <Tooltip title="Account">
                   <Link to="/Addaccount">
                     <IconButton>
-                        <AccountCircleRounded style={{ color: "black" }} />
+                      <AccountCircleRounded style={{ color: "black" }} fontSize="large" />
                     </IconButton>
                   
                   </Link>
@@ -99,7 +99,7 @@ export default function Topbar() {
               </ul>
               <ul >
                 <Tooltip title="refresh" >
-                  <IconButton onClick={refreshpage}><Refresh style={{ color: "black" }}></Refresh></IconButton>
+                  <IconButton onClick={refreshpage}><Refresh style={{ color: "black" }} fontSize="large" ></Refresh></IconButton>
                   
                 </Tooltip>
                
