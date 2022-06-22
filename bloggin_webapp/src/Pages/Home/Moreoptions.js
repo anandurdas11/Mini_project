@@ -16,8 +16,8 @@ const Moreoptions = () => {
     };
   return (
     <div >
-      <Button onClick={handleClick}>
-        <MoreVertRounded />
+      <Button onClick={handleClick} style={{borderRadius:"400px"}}>
+        <MoreVertRounded style={{color:"black"}} />
       </Button>
       <div className='menu'>
         <Menu
@@ -40,7 +40,7 @@ const Moreoptions = () => {
         >
           <MenuItem onClick={handleClose}>Edit</MenuItem>
           <MenuItem onClick={handleClose}>delete</MenuItem>
-          <MenuItem onClick={handleClose}>Report</MenuItem>
+          
         </Menu>
       </div>
     </div>

@@ -1,7 +1,0 @@
-<div className="addcomment">
-    <TextField label="Add comment" variant='standard' size='small' fullWidth>
-    </TextField>
-</div>
-<div className='commenupload'>
-    jflsjfdl
-</div>
