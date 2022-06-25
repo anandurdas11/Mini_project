@@ -1,6 +1,7 @@
 import './App.css';
 
 import { AppBar, Toolbar } from '@material-ui/core';
+import Test from './Test';
 
 function App() {
   return (
@@ -11,14 +12,15 @@ function App() {
             <header>
               <img
                 src="https://cdn0.iconfinder.com/data/icons/font-awesome-solid-vol-1/512/blog-128.png"
-                className="topAvatar" alt="icon"
+                className="topAvatar"
+                alt="icon"
               />
-              
             </header>
           </Toolbar>
         </AppBar>
         
       </body>
+      <Test />
     </div>
   );
 }
