@@ -2,12 +2,12 @@ import React from 'react'
 import {  Avatar, Card ,IconButton,TextField, Toolbar } from "@material-ui/core"
 import { SendRounded } from '@material-ui/icons';
 import './Postlist.css'
-import Moreoptions from './Moreoptions';
 import { useState } from 'react';
 import { postrefernce } from '../../firebasecollection';
 
 import {  onSnapshot } from 'firebase/firestore';
 import { useEffect } from 'react';
+import More from './More';
 function Home() {
    const [posts, setposts] = useState([]);
    useEffect(() => {
@@ -39,7 +39,7 @@ function Home() {
                     />
                     <div className="Name">{post.data.username}</div>
                     <div className="More">
-                      <Moreoptions />
+                      <More />
                     </div>
                   </Toolbar>
                   <Card className="content" style={{ overflow: "auto" }}>
