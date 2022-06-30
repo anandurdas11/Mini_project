@@ -4,10 +4,14 @@ import { TextField,Button } from "@material-ui/core";
 import { postrefernce } from '../../firebasecollection';
 import { addDoc } from 'firebase/firestore';
 import { useState } from 'react';
+import { auth } from '../../firebase';
+
 function Addpost() {
   const [Title, setTitle] = useState("");
-  const [username, setusername] = useState("");
+  const username = auth.currentUser.displayName;
   const [Content, setContent] = useState("");
+
+  
    function handleSubmit(e) {
      e.preventDefault();
      if (Title === "") {
@@ -20,7 +24,7 @@ function Addpost() {
        return;
      }
      //const collecref = collection(db, 'movies');
-     addDoc(postrefernce,{ username , Title, Content})
+     addDoc(postrefernce, { author :{ name: username , id:auth.currentUser.uid} , Title, Content})
        .then((response) => {
          console.log(response);
        })
@@ -33,15 +37,7 @@ function Addpost() {
     <div className="createpost">
       <h1>Create Post here </h1>
       <form onSubmit={handleSubmit}> 
-        <TextField
-          fullwidth
-          variant="outlined"
-          type="text"
-          label="Username"
-          value={username}
-          onChange={e => setusername(e.target.value)}
-          style={{ width: "40%", color: "black", backgroundColor: "white" }}
-        ></TextField>
+       
         <br></br>
         <br></br>
         <TextField

@@ -37,7 +37,7 @@ function Home() {
                       className="topavatar"
                       alt="icon"
                     />
-                    <div className="Name">{post.data.username}</div>
+                    <div className="Name">{post.data.author.name}</div>
                     <div className="More">
                       <More />
                     </div>
