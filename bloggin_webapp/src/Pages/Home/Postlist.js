@@ -11,7 +11,7 @@ import { Menu, MenuItem } from '@material-ui/core';
 import { doc, deleteDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 
-import More from './More';
+
 function Home() {
    const [posts, setposts] = useState([]);
    useEffect(() => {
