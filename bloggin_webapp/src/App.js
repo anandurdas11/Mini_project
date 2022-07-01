@@ -1,5 +1,5 @@
 import './App.css';
-
+import { HomeRounded } from "@material-ui/icons";
 import { AppBar, Toolbar } from '@material-ui/core';
 import Test from './Test';
 
@@ -15,7 +15,9 @@ function App() {
                 className="topAvatar"
                 alt="icon"
               />
+              <HomeRounded />
             </header>
+            
           </Toolbar>
         </AppBar>
         
