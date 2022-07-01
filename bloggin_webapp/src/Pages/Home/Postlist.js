@@ -4,9 +4,13 @@ import { SendRounded } from '@material-ui/icons';
 import './Postlist.css'
 import { useState } from 'react';
 import { postrefernce } from '../../firebasecollection';
-
+import { MoreVertRounded } from '@material-ui/icons';
 import {  onSnapshot } from 'firebase/firestore';
 import { useEffect } from 'react';
+import { Menu, MenuItem } from '@material-ui/core';
+import { doc, deleteDoc } from 'firebase/firestore';
+import { db } from '../../firebase';
+
 import More from './More';
 function Home() {
    const [posts, setposts] = useState([]);
@@ -18,6 +22,24 @@ function Home() {
        unsubcribe();
      };
    }, []);
+   const isAuth = localStorage.getItem("isAuth");
+   const [anchorEl, setanchorEl] = useState(null);
+   const openMenu = (event) => {
+     setanchorEl(event.currentTarget);
+   };
+   const onclose = () => {
+     setanchorEl(null);
+   };
+   const handleunauth = () => {
+     alert("you need to login for that");
+   };
+   function deletpost(id) {
+     const docref = doc(db, "Post", id);
+     
+     deleteDoc(docref)
+       .then(() => alert("deleted"))
+       .catch((error) => console.log(error.message));
+   }
   
  
   return (
@@ -39,7 +61,43 @@ function Home() {
                     />
                     <div className="Name">{post.data.author.name}</div>
                     <div className="More">
-                      <More />
+                      <div>
+                        {!isAuth ? (
+                          <IconButton onClick={handleunauth}>
+                            <MoreVertRounded
+                              style={{ color: "black", marginRight: "3%" }}
+                            />
+                          </IconButton>
+                        ) : (
+                          <>
+                            <IconButton onClick={openMenu}>
+                              <MoreVertRounded
+                                style={{
+                                  color: "black",
+                                  marginRight: "auto",
+                                  display: "flex",
+                                }}
+                              />
+                            </IconButton>
+                            <div className="menu">
+                              <Menu
+                                anchorEl={anchorEl}
+                                keepMounted
+                                open={Boolean(anchorEl)}
+                                onClose={onclose}
+                              >
+                                <MenuItem onClick={onclose}>Edit</MenuItem>
+
+                                <MenuItem onClick={onclose}>
+                                  <div onClick={() => deletpost(post.id)}>
+                                    delete
+                                  </div>
+                                </MenuItem>
+                              </Menu>
+                            </div>
+                          </>
+                        )}
+                      </div>
                     </div>
                   </Toolbar>
                   <Card className="content" style={{ overflow: "auto" }}>

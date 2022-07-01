@@ -1,8 +1,10 @@
 import { IconButton, Menu, MenuItem } from "@material-ui/core";
 import { MoreVertRounded } from "@material-ui/icons";
+import { deleteDoc, doc } from "firebase/firestore";
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { db } from "../../firebase";
 
 
 function Test() {
@@ -17,7 +19,10 @@ function Test() {
    const handleunauth = () => {
      alert("you need to login for that");
   };
-
+  function deletpost(id) {
+    const docref = doc(db, 'Post', id);
+    deleteDoc(docref).then(() => alert("deleted")).catch(error => console.log(error.message));
+  }
   return (
     <div>
       {!isAuth ? (
@@ -38,18 +43,12 @@ function Test() {
               open={Boolean(anchorEl)}
               onClose={onclose}
             >
-              <Link
-                to="/Edit"
-                style={{ color: "black", textDecoration: "none" }}
-              >
+             
                 <MenuItem onClick={onclose}>Edit</MenuItem>
-              </Link>
-              <Link
-                to="Delete"
-                style={{ color: "black", textDecoration: "none" }}
-              >
+              
+             
                   <MenuItem onClick={onclose}>delete</MenuItem>
-              </Link>
+              
             </Menu>
           </div>
         </>
