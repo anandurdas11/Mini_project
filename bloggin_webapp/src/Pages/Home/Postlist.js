@@ -88,8 +88,8 @@ function Home() {
                               >
                                 <MenuItem onClick={onclose}>Edit</MenuItem>
                                 
-                                <MenuItem onClick={onclose}>
-                                  <div onClick={() => deletpost(post.id)}>
+                                  <MenuItem onClick={() => deletpost(post.id)}>
+                                  <div>
                                     delete
                                   </div>
                                 </MenuItem>
