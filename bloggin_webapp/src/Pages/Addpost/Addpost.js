@@ -36,7 +36,7 @@ function Addpost() {
    }
   return (
     <div className="createpost">
-      <h1>Create Post here </h1>
+      <h1>Create blog here </h1>
       <form onSubmit={handleSubmit}> 
        
         <br></br>
