@@ -55,7 +55,7 @@ function Home() {
                 >
                   <Toolbar className="toppostbar">
                     <Avatar
-                      src="https://lh3.googleusercontent.com/a-/AOh14GjIq7jWeduBBxCLuIj3uG_ct5fx_F7S0ZKb4CdT=s96-c-rg-br100"
+                      src={post.data.author.photoUrl}
                       className="topavatar"
                       alt="icon"
                     />
@@ -87,7 +87,7 @@ function Home() {
                                 onClose={onclose}
                               >
                                 <MenuItem onClick={onclose}>Edit</MenuItem>
-
+                                
                                 <MenuItem onClick={onclose}>
                                   <div onClick={() => deletpost(post.id)}>
                                     delete

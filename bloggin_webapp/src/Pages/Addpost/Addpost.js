@@ -9,6 +9,7 @@ import { auth } from '../../firebase';
 function Addpost() {
   const [Title, setTitle] = useState("");
   const username = auth.currentUser.displayName;
+  const photo = auth.currentUser.photoURL;
   const [Content, setContent] = useState("");
 
   
@@ -24,7 +25,7 @@ function Addpost() {
        return;
      }
      //const collecref = collection(db, 'movies');
-     addDoc(postrefernce, { author :{ name: username , id:auth.currentUser.uid} , Title, Content})
+     addDoc(postrefernce, { author :{ name: username , id:auth.currentUser.uid , photoUrl: photo} , Title, Content})
        .then((response) => {
          console.log(response);
        })
