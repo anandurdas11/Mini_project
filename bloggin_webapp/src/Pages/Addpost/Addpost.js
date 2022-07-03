@@ -32,6 +32,9 @@ function Addpost() {
        .catch((error) => {
          console.log(error);
        });
+
+     setTitle("");
+     setContent("");
       
    }
   return (
