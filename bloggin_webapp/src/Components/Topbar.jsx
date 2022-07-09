@@ -82,23 +82,24 @@ export default function Topbar() {
                       
 
 
+                    </ul>
+                    <ul >
+                      <Tooltip title="Account">
+                        <Link to="/Addaccount">
+                          <IconButton>
+                            <AccountCircleRounded style={{ color: "black" }} fontSize="large" />
+                          </IconButton>
+
+                        </Link>
+                      </Tooltip>
+
+
                     </ul></>
               )}
             
             
               
-              <ul >
-                <Tooltip title="Account">
-                  <Link to="/Addaccount">
-                    <IconButton>
-                      <AccountCircleRounded style={{ color: "black" }} fontSize="large" />
-                    </IconButton>
-                  
-                  </Link>
-                </Tooltip>
-               
-                
-              </ul>
+             
               <ul >
                 <Tooltip title="refresh" >
                   <IconButton onClick={refreshpage}><Refresh style={{ color: "black" }} fontSize="large" ></Refresh></IconButton>
