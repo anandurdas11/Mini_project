@@ -34,7 +34,8 @@ function Login({ setIsAuth }) {
           alt=""
         />
         <br></br>
-
+        <br></br>
+        <br></br>
         <Button color="primary" variant="contained" onClick={signwithgoogle}>
           Sign in with Google
         </Button>
@@ -47,9 +48,10 @@ function Login({ setIsAuth }) {
           src="https://webstockreview.net/images/google-logo-png-2015-10.png"
           alt=""
         />
-        <div className="login_text">
-         
-        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
 
         <Button color="primary" variant="contained" onClick={signUserout}>
           Sign out

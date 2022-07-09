@@ -21,7 +21,7 @@
 .login_text{
     margin-top: 7%;
 }
-.login__container > button{
+.button{
     margin: 50px;
     text-transform: inherit !important;
     
