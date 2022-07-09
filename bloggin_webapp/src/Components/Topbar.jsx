@@ -59,7 +59,7 @@ export default function Topbar() {
 
               </ul>) : (
                   <><ul >
-                    <Tooltip title="Login">
+                    <Tooltip title="Logout">
                       <Link to="/Login">
                         <IconButton>
                           <InputRounded style={{ color: "black" }} fontSize="large" />

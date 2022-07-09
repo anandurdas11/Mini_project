@@ -1,6 +1,7 @@
 import React from 'react'
-import { Button ,Card } from "@material-ui/core"
-import './Login.css'
+import { Button  } from "@material-ui/core"
+
+import './Login3.css'
 import { auth, provider } from '../../firebase';
 import { signInWithPopup } from "firebase/auth";
 import { Redirect } from "react-router-dom";
@@ -26,39 +27,35 @@ function Login({ setIsAuth }) {
 
   }
   return !isAuth ? (
-    <Card className="Logbox">
-      <div className="Logo">
+    <div className="login">
+      <div className="login__container">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-          height={"90px"}
-          alt="logo"
+          src="https://webstockreview.net/images/google-logo-png-2015-10.png"
+          alt=""
         />
+        <br></br>
+
+        <Button color="primary" variant="contained" onClick={signwithgoogle}>
+          Sign in with Google
+        </Button>
       </div>
-      <div className="login">
-        <div className="Loginbutton">
-          <Button color="primary" variant="contained" onClick={signwithgoogle}>
-            Sign in with Google
-          </Button>
-        </div>
-      </div>
-    </Card>
+    </div>
   ) : (
-    <Card className="Logbox">
-      <div className="Logo">
+    <div className="login">
+      <div className="login__container">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-          height={"90px"}
-          alt="logo"
+          src="https://webstockreview.net/images/google-logo-png-2015-10.png"
+          alt=""
         />
-      </div>
-      <div className="login">
-        <div className="Loginoutbutton">
-          <Button color="primary" variant="contained" onClick={signUserout}>
-            Sign out
-          </Button>
+        <div className="login_text">
+         
         </div>
+
+        <Button color="primary" variant="contained" onClick={signUserout}>
+          Sign out
+        </Button>
       </div>
-    </Card>
+    </div>
   );
   
 }
