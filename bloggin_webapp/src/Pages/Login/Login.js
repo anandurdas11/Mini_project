@@ -30,6 +30,7 @@ function Login({ setIsAuth }) {
     <div className="login">
       <div className="login__container">
         <img
+          className="Logo"
           src="https://webstockreview.net/images/google-logo-png-2015-10.png"
           alt=""
         />
@@ -45,6 +46,7 @@ function Login({ setIsAuth }) {
     <div className="login">
       <div className="login__container">
         <img
+          className="Logo"
           src="https://webstockreview.net/images/google-logo-png-2015-10.png"
           alt=""
         />
