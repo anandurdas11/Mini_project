@@ -12,7 +12,7 @@ export default function Topbar() {
   const isAuth = localStorage.getItem("isAuth");
  
   const refreshpage = () => {
-    window.location.reload(false);
+    window.location.href="/Home"
   }
   return (
     <div className="topbar" position="static">

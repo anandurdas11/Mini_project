@@ -4,7 +4,6 @@ import { Button  } from "@material-ui/core"
 import './Login3.css'
 import { auth, provider } from '../../firebase';
 import { signInWithPopup } from "firebase/auth";
-import { Redirect } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { useState } from "react";
 
@@ -14,7 +13,7 @@ function Login({ setIsAuth }) {
      signOut(auth).then(() => {
        localStorage.clear();
        setisAuth(false);
-       window.location.pathname = "/Login";
+       window.location.href = "/Home";
      });
   };
   
@@ -22,7 +21,7 @@ function Login({ setIsAuth }) {
     signInWithPopup(auth, provider).then((result) => {
       localStorage.setItem("isAuth", true);
       setIsAuth(true);
-      <Redirect to='/' />
+      
     });
 
   }
