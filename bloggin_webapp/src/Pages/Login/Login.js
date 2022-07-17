@@ -13,7 +13,7 @@ function Login({ setIsAuth }) {
      signOut(auth).then(() => {
        localStorage.clear();
        setisAuth(false);
-       window.location.href = "/Home";
+       window.location.href = "/";
      });
   };
   
