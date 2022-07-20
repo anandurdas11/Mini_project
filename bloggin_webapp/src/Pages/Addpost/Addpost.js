@@ -2,7 +2,7 @@ import React from 'react'
 import "./Addpost.css"
 import { TextField,Button } from "@material-ui/core";
 import { postrefernce } from '../../firebasecollection';
-import { addDoc } from 'firebase/firestore';
+import { addDoc ,serverTimestamp } from 'firebase/firestore';
 import { useState } from 'react';
 import { auth } from '../../firebase';
 
@@ -11,7 +11,7 @@ function Addpost() {
   const username = auth.currentUser.displayName;
   const photo = auth.currentUser.photoURL;
   const [Content, setContent] = useState("");
-
+  
   
    function handleSubmit(e) {
      e.preventDefault();
@@ -25,7 +25,7 @@ function Addpost() {
        return;
      }
      //const collecref = collection(db, 'movies');
-     addDoc(postrefernce, { author :{ name: username , id:auth.currentUser.uid , photoUrl: photo} , Title, Content})
+     addDoc(postrefernce, { author :{ name: username , id:auth.currentUser.uid , photoUrl: photo} , Title, Content,timestamp:serverTimestamp()})
        .then((response) => {
          console.log(response);
        })

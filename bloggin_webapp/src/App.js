@@ -4,6 +4,7 @@ import Postlist from "./Pages/Home/Postlist";
 import Login from "./Pages/Login/Login";
 import Addpost from "./Pages/Addpost/Addpost";
 import Addaccount from "./Pages/Addaccount/Addaccount";
+import Footer from "./Components/Footer";
 function App() {
   return (
     <div className="container">
@@ -34,6 +35,7 @@ function App() {
           </div>
         </div>
       </Router>
+      <Footer />
     </div>
   );
 }

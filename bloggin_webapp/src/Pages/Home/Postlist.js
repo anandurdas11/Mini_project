@@ -5,7 +5,7 @@ import './Postlist.css'
 import { useState } from 'react';
 import { postrefernce } from '../../firebasecollection';
 import { MoreVertRounded } from '@material-ui/icons';
-import {  onSnapshot } from 'firebase/firestore';
+import {  onSnapshot, orderBy, query } from 'firebase/firestore';
 import { useEffect } from 'react';
 import { Menu, MenuItem } from '@material-ui/core';
 import { doc, deleteDoc } from 'firebase/firestore';
@@ -14,9 +14,11 @@ import { db } from '../../firebase';
 
 function Home() {
    const [posts, setposts] = useState([]);
-   useEffect(() => {
-     const unsubcribe = onSnapshot(postrefernce, (snapshot) => {
-       setposts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })));
+  useEffect(() => {
+    const q = query(postrefernce, orderBy("timestamp", "desc")); 
+     const unsubcribe = onSnapshot(q,postrefernce, (snapshot) => {
+       setposts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
+        ;
      });
      return () => {
        unsubcribe();
@@ -35,7 +37,6 @@ function Home() {
    };
    function deletpost(id) {
      const docref = doc(db, "Post", id);
-     
      deleteDoc(docref)
        .then(() => alert("deleted"))
        .catch((error) => console.log(error.message));
@@ -48,7 +49,7 @@ function Home() {
         <div className="Post">
           <div className="Postemplate">
             {posts.map((post) => (
-              <ul key={post.id}>
+              <li key={post.id}>
                 <Card
                   className="Postcard"
                   style={{ borderRadius: "20px 20px 0px 0px " }}
@@ -122,7 +123,7 @@ function Home() {
                     <br></br>
                   </div>
                 </div>
-              </ul>
+              </li>
             ))}
           </div>
         </div>
