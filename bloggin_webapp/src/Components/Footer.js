@@ -4,7 +4,8 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-
+import { Email, GitHub, Instagram, LinkedIn } from '@material-ui/icons';
+import IconButton from '@material-ui/core/IconButton';
 const useStyles = makeStyles((theme) => ({
     rootBox: {
         [theme.breakpoints.down('md')]: {
@@ -41,8 +42,8 @@ export default function Footer(props) {
 
     const content = {
         'brand': { image: 'nereus-assets/img/nereus-light.png', width: 110 },
-        'copy': '© 2020 Nereus All rights reserved.',
-        'link1': 'First Link',
+        'copy': '© 2022 ARD All rights reserved.',
+        'link1': '',
         'link2': 'Second Link',
         'link3': 'Third Link',
         'link4': 'Fourth Link',
@@ -65,10 +66,13 @@ export default function Footer(props) {
                         {brand}
                     </Link>
                     <Box component="nav" className={classes.footerNav}>
-                        <Link href="#" variant="body1" color="textPrimary" className={classes.footerLink}>{content['link1']}</Link>
-                        <Link href="#" variant="body1" color="textPrimary" className={classes.footerLink}>{content['link2']}</Link>
-                        <Link href="#" variant="body1" color="textPrimary" className={classes.footerLink}>{content['link3']}</Link>
-                        <Link href="#" variant="body1" color="textPrimary" className={classes.footerLink}>{content['link4']}</Link>
+                        <Link href="anandurdas11@gmail.com" variant="body1" target="NULL" color="textPrimary" className={classes.footerLink}>
+                            <IconButton> <Email /> </IconButton> 
+                           
+                        </Link>
+                        <Link href="#" variant="body1" color="textPrimary" className={classes.footerLink}> <IconButton> <Instagram /> </IconButton></Link>
+                        <Link href="https://github.com/anandurdas11" variant="body1" target="NULL" color="textPrimary" className={classes.footerLink}><IconButton> <GitHub /> </IconButton></Link>
+                        <Link href="#" variant="body1" color="textPrimary" className={classes.footerLink}><IconButton> <LinkedIn /> </IconButton></Link>
                     </Box>
                     <Typography color="textSecondary" component="p" variant="caption" gutterBottom={false}>{content['copy']}</Typography>
                 </Box>
