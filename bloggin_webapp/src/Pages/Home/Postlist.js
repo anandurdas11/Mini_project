@@ -17,8 +17,7 @@ function Home() {
   useEffect(() => {
     const q = query(postrefernce, orderBy("timestamp", "desc")); 
      const unsubcribe = onSnapshot(q,postrefernce, (snapshot) => {
-       setposts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
-        ;
+       setposts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })));
      });
      return () => {
        unsubcribe();
